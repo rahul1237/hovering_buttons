@@ -1,9 +1,18 @@
+/* restoring browser effects */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* as body content is same for all elements so we specify this in body section */
 body{
     background-color: #000;
     text-align: center;
     padding: 20vh;
 }
 
+/* this is the css for heading of our webpage */
 h2{
     text-align: center;
     color: aquamarine;
@@ -12,6 +21,7 @@ h2{
     left:43vw;
 }
 
+/* this css is for visited state of the link */
 .btn:link,
 .btn:visited{
     text-transform: uppercase;
@@ -21,12 +31,13 @@ h2{
     margin: 5vh;
 }
 
-
+/* this is the css which is used when we hover over the link */
 .btn:hover{
     transform: translateY(-10px);
     box-shadow: 0 10px 100px;
 }
 
+/* the active state of link is that state when we place cursor over it */
 .btn:active{
     transform: translateX(0);
     box-shadow: 0 20px 50px;
@@ -39,16 +50,6 @@ h2{
     display: inline-block;
     animation-name: todown;
     animation-duration: 5s;
-}
-
-.head_button_2{
-    background-color: rgba(172, 16, 16, 0.705);
-    padding: 10px 40px;
-    border-radius: 70px;
-    display: inline-block;
-    animation-name: todown;
-    animation-duration: 5s;
-    color: aqua;
 }
 
 .head_button_2{
@@ -81,6 +82,8 @@ h2{
     color: aqua;
 }
 
+
+/* this is the psuedo class which defines the after effects of the link */
 .btn::after{
     content: '';
     display: inline-block;
@@ -114,3 +117,20 @@ h2{
     transform: scale(1.5);
     opacity: 0;
 }
+
+
+/* animation that moves the button towards down when we reload our web page */
+@keyframes todown {
+    0% {
+      opacity: 0;
+      transform: translateY(-150px);
+    }
+    60% {
+      opacity: 0.6;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
